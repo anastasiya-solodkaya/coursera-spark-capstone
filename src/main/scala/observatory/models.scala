@@ -40,3 +40,5 @@ case class CellPoint(x: Double, y: Double)
   */
 case class Color(red: Int, green: Int, blue: Int)
 
+protected case class StationData(id:(Option[String], Option[String]), lat: Double, lon:Double)
+protected case class TemperatureData(stationId:(Option[String], Option[String]), month:Int, day:Int, temperature: Temperature)

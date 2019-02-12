@@ -1,6 +1,6 @@
 name := course.value ++ "-" ++ assignment.value
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.11.12"
 
 scalacOptions ++= Seq(
   "-feature",
@@ -15,10 +15,12 @@ scalacOptions ++= Seq(
   "-Xexperimental"
 )
 
+
 libraryDependencies ++= Seq(
   "com.sksamuel.scrimage" %% "scrimage-core" % "2.1.8", // for visualization
   // You don’t *have to* use Spark, but in case you want to, we have added the dependency
-  "org.apache.spark" %% "spark-sql" % "2.4.0",
+  "org.apache.spark" %% "spark-core" % "2.1.0",
+  "org.apache.spark" %% "spark-sql" % "2.1.0",
   // You don’t *have to* use akka-stream, but in case you want to, we have added the dependency
   "com.typesafe.akka" %% "akka-stream" % "2.4.12",
   "com.typesafe.akka" %% "akka-stream-testkit" % "2.4.12" % Test,
