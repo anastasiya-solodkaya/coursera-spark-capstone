@@ -6,20 +6,12 @@ import java.time.LocalDate
 import org.apache.spark.sql.expressions.scalalang.typed
 import org.apache.spark.sql.{DataFrame, Dataset, Row, SparkSession}
 import org.apache.spark.sql.types._
+import SparkConfiguration._
 
 /**
   * 1st milestone: data extraction
   */
 object Extraction {
-  import org.apache.log4j.{Level, Logger}
-  Logger.getLogger("org.apache.spark").setLevel(Level.WARN)
-
-  val spark: SparkSession =
-    SparkSession
-      .builder()
-      .appName("Weather Changes")
-      .config("spark.master", "local")
-      .getOrCreate()
 
   import spark.implicits._
 

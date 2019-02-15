@@ -1,7 +1,10 @@
 package observatory
 
+import com.sksamuel.scrimage.Pixel
+
 /**
   * Introduced in Week 1. Represents a location on the globe.
+ *
   * @param lat Degrees of latitude, -90 ≤ lat ≤ 90
   * @param lon Degrees of longitude, -180 ≤ lon ≤ 180
   */
@@ -38,7 +41,9 @@ case class CellPoint(x: Double, y: Double)
   * @param green Level of green, 0 ≤ green ≤ 255
   * @param blue Level of blue, 0 ≤ blue ≤ 255
   */
-case class Color(red: Int, green: Int, blue: Int)
+case class Color(red: Int, green: Int, blue: Int) {
+  def toPixel = Pixel(red, green, blue, 127)
+}
 
 protected case class StationData(id:(Option[String], Option[String]), lat: Double, lon:Double)
 protected case class TemperatureData(stationId:(Option[String], Option[String]), month:Int, day:Int, temperature: Temperature)
